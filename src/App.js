@@ -28,7 +28,6 @@ function App() {
   // }
   return (
     <div>
-      <h5>welcome</h5>
       {isOpen && <Modal />}
       <CartContainer />
     </div>
