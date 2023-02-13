@@ -7,11 +7,9 @@ const CartItem = ({ id, title, price, quantity, img }) => {
   return (
     <div>
       <h5>
-        {img}...
+        <img src={img} />
         {title}... total {title} = {quantity}... {price} each
       </h5>
-
-      <h5></h5>
 
       <button
         onClick={() => {

@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
 import { useEffect } from "react";
 import Modal from "./components/Modal";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
 
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);
@@ -29,7 +31,13 @@ function App() {
   return (
     <div>
       {isOpen && <Modal />}
-      <CartContainer />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/cart" element={<CartContainer />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
