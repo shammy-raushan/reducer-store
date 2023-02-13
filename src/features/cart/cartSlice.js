@@ -10,19 +10,25 @@ const initialState = {
   isLoading: true,
 };
 
-export const getCartItems = createAsyncThunk(
-  "cart/getCartItems",
-  async (name, thunkAPI) => {
-    try {
-      console.log(name);
-      console.log(thunkAPI);
-      const resp = await axios(url);
-      return resp.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue("something went wrong");
-    }
-  }
-);
+export async function getCartItems() {
+  let resp = await fetch("http://localhost:3000/cartItems");
+  let data = await resp.json();
+  return data;
+}
+// getCartItems().then((data) => console.log(data));
+// export const getCartItems = createAsyncThunk(
+//   "cart/getCartItems",
+//   async (name, thunkAPI) => {
+//     try {
+//       console.log(name);
+//       console.log(thunkAPI);
+//       const resp = await axios(url);
+//       return resp.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue("something went wrong");
+//     }
+//   }
+// );
 
 const cartSlice = createSlice({
   name: "cart",
