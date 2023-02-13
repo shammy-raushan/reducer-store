@@ -4,10 +4,8 @@ import axios from "axios";
 
 const url = "http://localhost:3000/cartItems";
 const initialState = {
-  // cartItems: [],
-  // cartItems: cartItems,
-  cartItems: [""],
-  amount: 10,
+  cartItems: cartItems,
+  quantity: 0,
   total: 0,
   isLoading: true,
 };
@@ -15,15 +13,10 @@ const initialState = {
 export const getCartItems = createAsyncThunk(
   "cart/getCartItems",
   async (name, thunkAPI) => {
-    // return fetch(url)
-    //   .then((resp) => resp.json())
-    //   .catch((err) => console.log(err));
     try {
       console.log(name);
       console.log(thunkAPI);
-
       const resp = await axios(url);
-      // console.log(resp);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
@@ -36,7 +29,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     clearCart: (state) => {
-      // state.cartItems = [];
       return { cartItems: [] };
     },
     removeItem: (state, action) => {
@@ -45,20 +37,20 @@ const cartSlice = createSlice({
     },
     increase: (state, { payload }) => {
       const cartItem = state.cartItems.find((item) => item.id === payload.id);
-      cartItem.amount = cartItem.amount + 1;
+      cartItem.quantity = cartItem.quantity + 1;
     },
     decrease: (state, { payload }) => {
       const cartItem = state.cartItems.find((item) => item.id === payload.id);
-      cartItem.amount = cartItem.amount - 1;
+      cartItem.quantity = cartItem.quantity - 1;
     },
     calculateTotals: (state) => {
-      let amount = 0;
+      let quantity = 0;
       let total = 0;
       state.cartItems.forEach((item) => {
-        amount += item.amount;
-        total += item.amount * item.price;
+        quantity += item.quantity;
+        total += item.quantity * item.price;
       });
-      state.amount = amount;
+      state.quantity = quantity;
       state.total = total;
     },
     extraReducers: {
@@ -78,7 +70,6 @@ const cartSlice = createSlice({
   },
 });
 
-// console.log(cartSlice);
 export const { clearCart, removeItem, increase, decrease, calculateTotals } =
   cartSlice.actions;
 export default cartSlice.reducer;

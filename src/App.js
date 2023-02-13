@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import "./App.css";
 import CartContainer from "./components/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,8 +28,8 @@ function App() {
   // }
   return (
     <div>
+      <h5>welcome</h5>
       {isOpen && <Modal />}
-      <Navbar />
       <CartContainer />
     </div>
   );

@@ -1,30 +1,32 @@
 const cartItems = [
   {
-    id: "1ee",
+    id: "1",
     title: "Tomato",
     price: "400",
     img: "img1",
-    amount: 1,
+    quantity: 1,
   },
   {
-    id: "2ss",
-    title: "Tomato",
+    id: "2",
+    title: "Potato",
     price: "500",
     img: "img2",
-    amount: 1,
+    quantity: 0,
   },
   {
-    id: "3ss",
-    title: "Tomato",
+    id: "3",
+    title: "Onion",
     price: "300",
     img: "img3",
-    amount: 1,
+    quantity: 0,
   },
   {
-    id: "4rr",
-    title: "Tomato",
-    price: "800",
+    id: "4",
+    title: "Brinjal",
+    price: "200",
     img: "img4",
-    amount: 1,
+    quantity: 0,
   },
 ];
+
+export default cartItems;
