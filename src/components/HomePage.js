@@ -13,16 +13,9 @@ const HomePage = () => {
     navigate("/cart");
   };
 
-  if (quantity < 1) {
-    return (
-      <section>
-        <header>
-          <h5>your bag is empty</h5>
-        </header>
-      </section>
-    );
-  }
-
+  //   if (quantity < 1) {
+  //     return <h1>your cart is empty...........</h1>;
+  //   } else {
   return (
     <section>
       <div>
@@ -32,14 +25,19 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+
       <footer>
         <h5>
-          {quantity} Items: <span>RS {total.toFixed(2)}</span>{" "}
+          <div>
+            {quantity} Items: <span>RS {total.toFixed(2)}</span>{" "}
+          </div>
+
           <button onClick={goToCart}>View Cart</button>
         </h5>
       </footer>
     </section>
   );
 };
+// };
 
 export default HomePage;

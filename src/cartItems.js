@@ -9,7 +9,7 @@ const cartItems = [
     title: "Tomato",
     price: "400",
     img: Tomato,
-    quantity: 1,
+    quantity: 0,
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ const cartItems = [
   //   title: "Coconut",
   //   price: "200",
   //   img: Coconut,
-  //   quantity: 0,
+  //   quantity: 1,
   // },
 ];
 
