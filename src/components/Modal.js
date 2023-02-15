@@ -21,7 +21,6 @@ const Modal = () => {
             dispatch(closeModal());
           }}
         >
-          {" "}
           cancel
         </button>
       </div>
