@@ -1,11 +1,11 @@
 import "./App.css";
-import CartContainer from "./components/CartContainer";
+import CartContainer from "./components/Cart/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateTotals, getCartItems } from "./features/cart/cartSlice";
 import { useEffect } from "react";
 import Modal from "./components/Modal";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/Home/HomePage";
 
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);

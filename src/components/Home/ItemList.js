@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { removeItem, increase, decrease } from "../features/cart/cartSlice";
+import { removeItem, increase, decrease } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-import "./Cart.css";
+import "../Cart.css";
+
 const ItemList = ({ id, title, price, quantity, img }) => {
   const [showText, setShowText] = useState(false);
   const dispatch = useDispatch();
-  console.log(quantity);
 
   return (
     <div>

@@ -1,14 +1,10 @@
-import CartItem from "./CartItem";
-import { useDispatch, useSelector } from "react-redux";
-import { openModal } from "../features/modal/modalSlice";
+import { useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cartItems, total, quantity } = useSelector((store) => store.cart);
-
   const goToCart = () => {
     navigate("/cart");
   };
