@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { useNavigate } from "react-router-dom";
-
+import { Grid } from "@material-ui/core";
 const HomePage = () => {
   const navigate = useNavigate();
   const { cartItems, total, quantity } = useSelector((store) => store.cart);
@@ -10,39 +10,39 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      <h1
+    <>
+      <div className="heading">Fruits and Vegetables </div>
+      <div
         style={{
-          marginTop: "0px",
-          marginBottom: "0px",
+          background: "#F9F9F9",
         }}
       >
-        Add Items in Your Cart
-      </h1>
-      <div>
+        <hr />
+        <div className="subHeading">ALL ITEMS</div>
+
         {cartItems.map((item) => (
           <div key={item.id}>
             <ItemList {...item} />
           </div>
         ))}
+
+        <footer>
+          <h5>
+            <div>
+              {quantity >= 1 && (
+                <div>
+                  {quantity} Items:<span>RS {total.toFixed(2)}</span>
+                </div>
+              )}
+            </div>
+
+            <button className="btn" onClick={goToCart}>
+              View Cart
+            </button>
+          </h5>
+        </footer>
       </div>
-
-      <footer>
-        <h5>
-          <div>
-            {quantity >= 1 && (
-              <div>
-                {quantity} Items:<span>RS {total.toFixed(2)}</span>
-              </div>
-            )}
-          </div>
-
-          <button className="btn" onClick={goToCart}>
-            View Cart
-          </button>
-        </h5>
-      </footer>
-    </div>
+    </>
   );
 };
 

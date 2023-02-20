@@ -1,17 +1,47 @@
+.heading {
+  text-align: center;
+  margin: 18px 0;
+  font-weight: 700;
+  size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+}
+.subHeading {
+  margin: 14px;
+  font-weight: 400;
+  size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.32px;
+  color: #6e6e6e;
+}
 .plusBtn {
   background: #ed1164;
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
   border-radius: 18px;
   padding: 8px;
   gap: 8px;
-  width: 30px;
+  width: 20px;
   height: 12px;
   margin-top: 2px;
+  font-size: 12px;
+  position: absolute;
 }
 .itemContainer {
-  height: 120px;
+  /* height: 120px;
   width: 100px;
-  background: #808080;
+  background: #808080; */
+}
+.imgContainer {
+  background: #fff;
+  box-sizing: border-box;
+  width: 112px;
+  height: 84px;
+  left: 0px;
+  top: 0px;
+  border: 0.5px solid #e2e2e2;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
 }
 .btn {
   background: #ed1164;

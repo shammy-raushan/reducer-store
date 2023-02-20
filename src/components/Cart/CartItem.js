@@ -10,7 +10,7 @@ const CartItem = ({ id, title, price, quantity, img }) => {
       <div className="itemContainer">
         <img src={img} />
         {title}
-        {price} each
+        Rs{price}
       </div>
       <div
         style={{
