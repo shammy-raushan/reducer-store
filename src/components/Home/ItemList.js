@@ -2,16 +2,63 @@ import React, { useState } from "react";
 import { removeItem, increase, decrease } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import "../Cart.css";
+import ADD from "../../../src/assets/AddBtn.png";
 
-const ItemList = ({ id, title, price, quantity, img }) => {
+const ItemList = ({ id, title, price, quantity, img, mrp }) => {
   const [showText, setShowText] = useState(false);
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div className="itemContainer">
-        <img src={img} />
-        {title} .. RS{price}
+    <div className="itemContainer">
+      <div className="imgContainer">
+        <img src={img} />{" "}
+        {!showText ? (
+          <div
+            className="plusBtn"
+            onClick={() => {
+              setShowText(true);
+              dispatch(increase({ id }));
+            }}
+          >
+            <h2 className="plusSymbol">+</h2>
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
+      <div
+        style={{
+          marginBottom: "10px",
+        }}
+      >
+        <h4
+          className="headerClass"
+          style={{
+            marginTop: "-13px",
+          }}
+        >
+          {title}
+        </h4>
+        <h4
+          className="headerClass"
+          style={{
+            color: "#6e6e6e",
+          }}
+        >
+          {quantity}{" "}
+        </h4>
+        <h4 className="headerClass">
+          Rs{price} &nbsp;
+          <s
+            style={{
+              color: "#6e6e6e",
+            }}
+          >
+            Rs{mrp}
+          </s>
+        </h4>
+      </div>
+      <div className="plusMinusBtn">
         {showText && (
           <div
             style={{
@@ -19,15 +66,6 @@ const ItemList = ({ id, title, price, quantity, img }) => {
               marginLeft: "36px",
             }}
           >
-            <button
-              onClick={() => {
-                dispatch(increase({ id }));
-              }}
-            >
-              +
-            </button>
-            {quantity}
-
             <button
               onClick={() => {
                 dispatch(decrease({ id }));
@@ -38,27 +76,18 @@ const ItemList = ({ id, title, price, quantity, img }) => {
             >
               -
             </button>
+            {quantity}
+
+            <button
+              onClick={() => {
+                dispatch(increase({ id }));
+              }}
+            >
+              +
+            </button>
           </div>
         )}
       </div>
-      {!showText ? (
-        <div
-          className="plusBtn"
-          onClick={() => {
-            setShowText(true);
-            dispatch(increase({ id }));
-          }}
-        >
-          ADD
-        </div>
-      ) : (
-        <div
-          style={{
-            height: "40px",
-            color: "red",
-          }}
-        ></div>
-      )}
     </div>
   );
 };

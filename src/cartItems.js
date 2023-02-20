@@ -7,9 +7,10 @@ const cartItems = [
   {
     id: "1",
     title: "Tomato",
-    price: "400",
+    price: "40",
     img: Tomato,
     quantity: 0,
+    mrp: "50",
   },
   {
     id: "2",
@@ -17,13 +18,15 @@ const cartItems = [
     price: "500",
     img: Lemon,
     quantity: 0,
+    mrp: "60",
   },
   {
     id: "3",
     title: "Onion",
-    price: "300",
+    price: "30",
     img: Avacado,
     quantity: 0,
+    mrp: "40",
   },
   // {
   //   id: "4",

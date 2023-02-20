@@ -1,6 +1,6 @@
 .heading {
   text-align: center;
-  margin: 18px 0;
+  margin: 12px 0;
   font-weight: 700;
   size: 16px;
   line-height: 20px;
@@ -16,20 +16,30 @@
 }
 .plusBtn {
   background: #ed1164;
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 8px;
   gap: 8px;
-  width: 20px;
-  height: 12px;
-  margin-top: 2px;
-  font-size: 12px;
+  width: 21px;
+  height: 21px;
+  left: 86px;
+  top: 58px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
   position: absolute;
 }
+.plusMinusBtn {
+  position: absolute;
+}
+.plusSymbol {
+  color: #ffffff;
+}
 .itemContainer {
-  /* height: 120px;
-  width: 100px;
-  background: #808080; */
+  padding-left: 16px;
+  max-width: fit-content;
+  /* background: red; */
 }
 .imgContainer {
   background: #fff;
@@ -42,11 +52,26 @@
   border-radius: 8px;
   text-align: center;
   position: relative;
+  margin-bottom: 20px;
 }
 .btn {
   background: #ed1164;
-  color: white;
+  color: #fff;
   width: 100%;
-  height: 40px;
+  height: 44px;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 16px;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.headerClass {
+  margin-top: 0;
+  margin-bottom: 0;
 }

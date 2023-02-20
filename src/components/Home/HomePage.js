@@ -26,21 +26,17 @@ const HomePage = () => {
           </div>
         ))}
 
-        <footer>
-          <h5>
+        <div>
+          {quantity >= 1 && (
             <div>
-              {quantity >= 1 && (
-                <div>
-                  {quantity} Items:<span>RS {total.toFixed(2)}</span>
-                </div>
-              )}
+              {quantity} Items:<span>RS {total.toFixed(2)}</span>
             </div>
+          )}
+        </div>
 
-            <button className="btn" onClick={goToCart}>
-              View Cart
-            </button>
-          </h5>
-        </footer>
+        <button className="btn" onClick={goToCart}>
+          VIEW &nbsp;CART
+        </button>
       </div>
     </>
   );
