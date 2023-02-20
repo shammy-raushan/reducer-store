@@ -10,7 +10,15 @@ const HomePage = () => {
   };
 
   return (
-    <section>
+    <div>
+      <h1
+        style={{
+          marginTop: "0px",
+          marginBottom: "0px",
+        }}
+      >
+        Add Items in Your Cart
+      </h1>
       <div>
         {cartItems.map((item) => (
           <div key={item.id}>
@@ -22,13 +30,19 @@ const HomePage = () => {
       <footer>
         <h5>
           <div>
-            {quantity} Items: <span>RS {total.toFixed(2)}</span>{" "}
+            {quantity >= 1 && (
+              <div>
+                {quantity} Items:<span>RS {total.toFixed(2)}</span>
+              </div>
+            )}
           </div>
 
-          <button onClick={goToCart}>View Cart</button>
+          <button className="btn" onClick={goToCart}>
+            View Cart
+          </button>
         </h5>
       </footer>
-    </section>
+    </div>
   );
 };
 

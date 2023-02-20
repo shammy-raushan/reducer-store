@@ -40,7 +40,7 @@ const ItemList = ({ id, title, price, quantity, img }) => {
       </div>
       {quantity == 0 ? (
         <div className="plusBtn" onClick={() => setShowText(!showText)}>
-          +
+          ADD
         </div>
       ) : (
         <div

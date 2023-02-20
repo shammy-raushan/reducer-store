@@ -1,42 +1,50 @@
 import React from "react";
 import { removeItem, increase, decrease } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import "../Cart.css";
 
 const CartItem = ({ id, title, price, quantity, img }) => {
   const dispatch = useDispatch();
   return (
-    <div>
-      <h5>
+    <>
+      <div className="itemContainer">
         <img src={img} />
-        {title}... total {title} = {quantity}... {price} each
-      </h5>
-
-      <button
-        onClick={() => {
-          dispatch(removeItem(id));
+        {title}
+        {price} each
+      </div>
+      <div
+        style={{
+          marginBottom: "20px",
         }}
       >
-        remove
-      </button>
-      <button
-        onClick={() => {
-          dispatch(increase({ id }));
-        }}
-      >
-        <h1>+</h1>
-      </button>
-      <button
-        onClick={() => {
-          if (quantity === 1) {
+        <button
+          onClick={() => {
+            dispatch(increase({ id }));
+          }}
+        >
+          +{" "}
+        </button>
+        {quantity}
+        <button
+          onClick={() => {
+            if (quantity === 1) {
+              dispatch(removeItem(id));
+              return;
+            }
+            dispatch(decrease({ id }));
+          }}
+        >
+          -{" "}
+        </button>{" "}
+        <button
+          onClick={() => {
             dispatch(removeItem(id));
-            return;
-          }
-          dispatch(decrease({ id }));
-        }}
-      >
-        <h1>_</h1>
-      </button>
-    </div>
+          }}
+        >
+          remove
+        </button>
+      </div>
+    </>
   );
 };
 
