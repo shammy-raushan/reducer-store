@@ -20,11 +20,11 @@ const HomePage = () => {
         <hr />
         <div className="subHeading">ALL ITEMS</div>
 
-        {cartItems.map((item) => (
-          <div key={item.id}>
+        <div className="itemContainer">
+          {cartItems.map((item) => (
             <ItemList {...item} />
-          </div>
-        ))}
+          ))}
+        </div>
 
         <div>
           {quantity >= 1 && (

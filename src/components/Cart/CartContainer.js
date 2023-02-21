@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../features/modal/modalSlice";
 import { useNavigate } from "react-router-dom";
 import "../Cart.css";
+import ItemList from "../Home/ItemList";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,9 @@ const CartContainer = () => {
       <div>
         {cartItems.map((item) => (
           <div key={item.id}>
-            <CartItem {...item} />
+            <ItemList {...item} />
+
+            {/* <CartItem {...item} /> */}
           </div>
         ))}
       </div>

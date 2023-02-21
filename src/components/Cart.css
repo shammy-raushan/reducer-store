@@ -32,14 +32,34 @@
 }
 .plusMinusBtn {
   position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 42px;
+  height: 14px;
+  left: 76px;
+  top: 64px;
+  color: #ed1164;
 }
 .plusSymbol {
   color: #ffffff;
 }
 .itemContainer {
-  padding-left: 16px;
-  max-width: fit-content;
+  /* padding-left: 16px; */
+  /* width: fit-content; */
   /* background: red; */
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20%;
+
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 .imgContainer {
   background: #fff;
@@ -52,7 +72,7 @@
   border-radius: 8px;
   text-align: center;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 82px;
 }
 .btn {
   background: #ed1164;
