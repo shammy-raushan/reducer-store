@@ -24,17 +24,8 @@ const ItemList = ({ id, title, price, quantity, img, mrp }) => {
       ) : (
         <div></div>
       )}
-      {/* <div className="plusMinusBtn"> */}
       {showText && (
-        <div
-          className="plusMinusBtn"
-          style={
-            {
-              // marginTop: "-3px",
-              // marginLeft: "36px",
-            }
-          }
-        >
+        <div className="plusMinusBtn">
           <h3
             onClick={() => {
               dispatch(decrease({ id }));
@@ -62,30 +53,15 @@ const ItemList = ({ id, title, price, quantity, img, mrp }) => {
           </h3>
         </div>
       )}
-      <div
-        style={
-          {
-            // marginTop: "60px",
-          }
-        }
-      >
-        <h4
-          className="headerClass"
-          style={
-            {
-              // marginTop: "-13px",
-            }
-          }
-        >
-          {title}
-        </h4>
+      <div>
+        <h4 className="headerClass">{title}</h4>
         <h4
           className="headerClass"
           style={{
             color: "#6e6e6e",
           }}
         >
-          {quantity}{" "}
+          {quantity}
         </h4>
         <h4 className="headerClass">
           Rs{price} &nbsp;

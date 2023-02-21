@@ -15,29 +15,28 @@ const CartContainer = () => {
   };
   if (quantity < 1) {
     return (
-      <section>
-        <header>
-          <h3>your don't have any items in cart</h3>
-          <h5>your favourite items are just a click away</h5>
-          <button className="btn" onClick={goToHome}>
-            Start Shopping
-          </button>
-        </header>
-      </section>
+      <header>
+        <h3>your don't have any items in cart</h3>
+        <h5>your favourite items are just a click away</h5>
+        <button className="btn" onClick={goToHome}>
+          Start Shopping
+        </button>
+      </header>
     );
   }
 
   return (
-    <section>
+    <>
       <header>
         <p>Total items in Cart = {quantity}</p>
       </header>
-      <div>
+
+      <div className="itemContainer">
         {cartItems.map((item) => (
           <div key={item.id}>
-            <ItemList {...item} />
+            {/* <ItemList {...item} /> */}
 
-            {/* <CartItem {...item} /> */}
+            <CartItem {...item} />
           </div>
         ))}
       </div>
@@ -49,7 +48,7 @@ const CartContainer = () => {
           clear cart
         </button>
       </footer>
-    </section>
+    </>
   );
 };
 

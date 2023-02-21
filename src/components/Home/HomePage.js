@@ -22,21 +22,22 @@ const HomePage = () => {
 
         <div className="itemContainer">
           {cartItems.map((item) => (
-            <ItemList {...item} />
+            <div key={item.id}>
+              <ItemList {...item} />
+            </div>
           ))}
         </div>
-
-        <div>
-          {quantity >= 1 && (
-            <div>
-              {quantity} Items:<span>RS {total.toFixed(2)}</span>
-            </div>
-          )}
-        </div>
-
-        <button className="btn" onClick={goToCart}>
-          VIEW &nbsp;CART
-        </button>
+        {quantity >= 1 && (
+          <div className="viewCartBtn">
+            <h3>
+              RS {total.toFixed(2)} | {quantity}&nbsp;
+              {quantity === 1 ? "item" : "items"}
+            </h3>
+            <button className="btn" onClick={goToCart}>
+              View &nbsp;Cart
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

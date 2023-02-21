@@ -14,7 +14,7 @@ const cartItems = [
   },
   {
     id: "2",
-    title: "Potato",
+    title: "Lemon",
     price: "50",
     img: Lemon,
     quantity: 0,
@@ -22,7 +22,7 @@ const cartItems = [
   },
   {
     id: "3",
-    title: "Onion",
+    title: "Avacado",
     price: "30",
     img: Avacado,
     quantity: 0,
@@ -34,7 +34,6 @@ const cartItems = [
     price: "20",
     img: Coconut,
     quantity: 0,
-
     mrp: "30",
   },
   {
@@ -43,7 +42,6 @@ const cartItems = [
     price: "20",
     img: Coconut,
     quantity: 0,
-
     mrp: "30",
   },
   {
@@ -128,7 +126,7 @@ const cartItems = [
   },
   {
     id: "16",
-    title: "Coconut",
+    title: "Coconut16",
     price: "20",
     img: Coconut,
     quantity: 0,
@@ -136,7 +134,7 @@ const cartItems = [
   },
   {
     id: "17",
-    title: "Coconut",
+    title: "Coconut17",
     price: "20",
     img: Coconut,
     quantity: 0,
@@ -144,7 +142,7 @@ const cartItems = [
   },
   {
     id: "18",
-    title: "Potato",
+    title: "Potato18",
     price: "50",
     img: Lemon,
     quantity: 0,
@@ -152,7 +150,7 @@ const cartItems = [
   },
   {
     id: "19",
-    title: "Potato",
+    title: "Potato19",
     price: "50",
     img: Lemon,
     quantity: 0,
@@ -160,7 +158,7 @@ const cartItems = [
   },
   {
     id: "20",
-    title: "Potato",
+    title: "Potato20",
     price: "50",
     img: Lemon,
     quantity: 0,
