@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { removeItem, increase, decrease } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import "../Cart.css";
-import ADD from "../../../src/assets/AddBtn.png";
 
-const ItemList = ({ id, title, price, quantity, img, mrp }) => {
+const AllProducts = ({ id, title, price, quantity, img, mrp }) => {
   const [showText, setShowText] = useState(false);
   const dispatch = useDispatch();
 
@@ -78,4 +77,4 @@ const ItemList = ({ id, title, price, quantity, img, mrp }) => {
   );
 };
 
-export default ItemList;
+export default AllProducts;

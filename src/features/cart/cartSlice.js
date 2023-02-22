@@ -6,6 +6,8 @@ const url = "http://localhost:3000/cartItems";
 const initialState = {
   cartItems: cartItems,
   quantity: 0,
+  discount: 0,
+  totalMrp: 0,
   total: 0,
   isLoading: true,
 };
@@ -52,12 +54,16 @@ const cartSlice = createSlice({
     calculateTotals: (state) => {
       let quantity = 0;
       let total = 0;
+      let totalMrp = 0;
       state.cartItems.forEach((item) => {
         quantity += item.quantity;
         total += item.quantity * item.price;
+        totalMrp += item.quantity * item.mrp;
       });
       state.quantity = quantity;
       state.total = total;
+      state.totalMrp = totalMrp;
+      state.discount = totalMrp - total;
     },
     extraReducers: {
       [getCartItems.pending]: (state) => {

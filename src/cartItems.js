@@ -10,7 +10,7 @@ const cartItems = [
     price: "40",
     img: Tomato,
     quantity: 0,
-    mrp: "50",
+    mrp: "55",
   },
   {
     id: "2",
@@ -18,7 +18,7 @@ const cartItems = [
     price: "50",
     img: Lemon,
     quantity: 0,
-    mrp: "60",
+    mrp: "66",
   },
   {
     id: "3",
@@ -26,7 +26,7 @@ const cartItems = [
     price: "30",
     img: Avacado,
     quantity: 0,
-    mrp: "40",
+    mrp: "48",
   },
   {
     id: "4",

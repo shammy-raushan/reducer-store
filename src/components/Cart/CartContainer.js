@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../features/modal/modalSlice";
 import { useNavigate } from "react-router-dom";
 import "../Cart.css";
-import ItemList from "../Home/ItemList";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { cartItems, total, quantity } = useSelector((store) => store.cart);
+  const { cartItems, total, quantity, totalMrp, discount } = useSelector(
+    (store) => store.cart
+  );
 
   const goToHome = () => {
     navigate("/");
@@ -27,27 +28,74 @@ const CartContainer = () => {
 
   return (
     <>
-      <header>
-        <p>Total items in Cart = {quantity}</p>
-      </header>
-
-      <div className="itemContainer">
-        {cartItems.map((item) => (
-          <div key={item.id}>
-            {/* <ItemList {...item} /> */}
-
-            <CartItem {...item} />
-          </div>
-        ))}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "10px 24px",
+        }}
+      >
+        <h3>Review Items</h3>
+        <h4
+          style={{
+            color: "#6e6e6e",
+          }}
+        >
+          {quantity} ITEMS
+        </h4>
       </div>
-      <footer>
-        <h5>
-          total <span>RS {total.toFixed(2)}</span>
-        </h5>
-        <button className="btn" onClick={() => dispatch(openModal())}>
-          clear cart
-        </button>
-      </footer>
+
+      {cartItems.map((item) => (
+        <div key={item.id}>
+          <CartItem {...item} />
+        </div>
+      ))}
+
+      <div
+        style={{
+          position: "sticky",
+        }}
+      >
+        <div
+          style={{
+            justifyContent: "space-between",
+            padding: "16px",
+            marginTop: "55%",
+          }}
+        >
+          <hr />
+          <h3>Bill details</h3>
+          <div className="footerBill">
+            <h4>Item Total</h4>
+            <h4>Rs{totalMrp}</h4>
+          </div>
+          <div
+            className="footerBill"
+            style={{
+              color: "#278829",
+            }}
+          >
+            <h4>Discount</h4>
+            <h4>-Rs{discount}</h4>
+          </div>
+          <hr />
+          <div className="footerBill">
+            <h4>Grand Total</h4>
+            <h4>Rs{total.toFixed(2)}</h4>
+          </div>
+          <button
+            className="btn"
+            onClick={() => dispatch(openModal())}
+            style={{
+              width: "100% ",
+              justifyContent: "center",
+            }}
+          >
+            {/* clear cart */}
+            Continue to Payment
+          </button>
+        </div>
+      </div>
     </>
   );
 };

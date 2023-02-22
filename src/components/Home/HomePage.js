@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import ItemList from "./ItemList";
+import AllProducts from "./AllProducts";
 import { useNavigate } from "react-router-dom";
-import { Grid } from "@material-ui/core";
+
 const HomePage = () => {
   const navigate = useNavigate();
   const { cartItems, total, quantity } = useSelector((store) => store.cart);
@@ -23,7 +23,7 @@ const HomePage = () => {
         <div className="itemContainer">
           {cartItems.map((item) => (
             <div key={item.id}>
-              <ItemList {...item} />
+              <AllProducts {...item} />
             </div>
           ))}
         </div>
