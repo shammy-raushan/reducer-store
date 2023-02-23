@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { cartItems, total, quantity } = useSelector((store) => store.cart);
+  const { cartItems, total, quantity, discount } = useSelector(
+    (store) => store.cart
+  );
   const goToCart = () => {
     navigate("/cart");
   };
@@ -29,13 +31,38 @@ const HomePage = () => {
         </div>
         {quantity >= 1 && (
           <div className="viewCartBtn">
-            <h3>
-              RS {total.toFixed(2)} | {quantity}&nbsp;
-              {quantity === 1 ? "item" : "items"}
-            </h3>
-            <button className="btn" onClick={goToCart}>
-              View &nbsp;Cart
-            </button>
+            <div
+              style={{
+                textAlign: "center",
+                background: "#12877f",
+                color: "white",
+                padding: "5px",
+                marginBottom: "10px",
+              }}
+            >
+              <h5
+                style={{
+                  marginTop: "0",
+                  marginBottom: "10px",
+                }}
+              >
+                YOU SAVED &nbsp;Rs{discount} ON THIS ORDER!
+              </h5>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <h3>
+                RS {total.toFixed(2)} | {quantity}&nbsp;
+                {quantity === 1 ? "item" : "items"}
+              </h3>
+              <button className="btn" onClick={goToCart}>
+                View &nbsp;Cart
+              </button>
+            </div>
           </div>
         )}
       </div>

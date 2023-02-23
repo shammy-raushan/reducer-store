@@ -14,10 +14,10 @@ const CartItem = ({ id, title, price, quantity, img, mrp }) => {
         <div
           style={{
             display: "flex",
+            marginTop: "16px",
           }}
         >
           <div
-            className="cartImgContainer"
             style={{
               marginLeft: "5%",
               width: "40%",
@@ -47,20 +47,7 @@ const CartItem = ({ id, title, price, quantity, img, mrp }) => {
               marginLeft: "12%",
             }}
           >
-            {!showText ? (
-              <div
-                className="cartPlusBtn"
-                onClick={() => {
-                  setShowText(true);
-                  dispatch(increase({ id }));
-                }}
-              >
-                <h2 className="cartPlusSymbol">+</h2>
-              </div>
-            ) : (
-              <div></div>
-            )}
-            {showText && (
+            {!showText && (
               <div className="cartPlusMinusBtn">
                 <h3
                   onClick={() => {

@@ -44,12 +44,13 @@ const CartContainer = () => {
           {quantity} ITEMS
         </h4>
       </div>
-
-      {cartItems.map((item) => (
-        <div key={item.id}>
-          <CartItem {...item} />
-        </div>
-      ))}
+      <div className="cartItemContainer">
+        {cartItems.map((item) => (
+          <div key={item.id}>
+            <CartItem {...item} />
+          </div>
+        ))}
+      </div>
 
       <div
         style={{
@@ -57,11 +58,13 @@ const CartContainer = () => {
         }}
       >
         <div
-          style={{
-            justifyContent: "space-between",
-            padding: "16px",
-            marginTop: "55%",
-          }}
+          className="viewBill"
+          // style={{
+          //   justifyContent: "space-between",
+          //   padding: "16px",
+          //   marginTop: "19%",
+          //   position: "sticky",
+          // }}
         >
           <hr />
           <h3>Bill details</h3>
